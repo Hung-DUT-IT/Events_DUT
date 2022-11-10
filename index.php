@@ -25,13 +25,13 @@
         <!-- Begin page -->
         <div id="wrapper">
             <?php
-                include "pages/header.php" ;            // <!-- Topbar Start -->
-                include "pages/leftsidebar.php"         // <!-- ========== Left Sidebar Start ========== -->
+                include "View/header.php" ;            // <!-- Topbar Start -->
+                include "View/leftsidebar.php"         // <!-- ========== Left Sidebar Start ========== -->
             ?>
             <div class="content-page">
                 <?php
-                    include "pages/main.php" ;      // <!-- content -->
-                    include "pages/footer.php"      // <!-- Footer Start -->
+                    include "View/main.php" ;          // <!-- content -->
+                    include "View/footer.php"          // <!-- Footer Start -->
                 ?>
             </div>
 

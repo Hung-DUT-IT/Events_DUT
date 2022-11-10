@@ -1,3 +1,20 @@
+<?php
+    include_once "Model/Handle/HandleLogin.php";
+?>
+<?php
+    $login = new Handle_Login();
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        $username = $_POST['Username'];
+        $password = $_POST['Password'];
+
+        $login_check = $login->login($username, $password);
+
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,51 +48,33 @@
                                     <a href="index.html">
                                         <span><img src="assets\images\logo-dark.png" alt="" height="22"></span>
                                     </a>
-                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
+                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access webside Event-DUT.</p>
                                 </div>
 
-                                <form action="#">
+                                <form action="login.php" method="POST">
 
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <label >Email address</label>
+                                        <input class="form-control" type="text" name="Username"  placeholder="Enter your email" />
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        <label >Password</label>
+                                        <input class="form-control" type="password"  name="Password" placeholder="Enter your password" />
                                     </div>
-
-                                    <div class="form-group mb-3">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked="">
-                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
-                                        </div>
-                                    </div>
-
+                                    <span>
+                                        <?php
+                                            if(isset($login_check))
+                                            {
+                                                echo $login_check;
+                                            }
+                                        ?>
+                                    </span>
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+                                        <input class="btn btn-primary btn-block" type="submit" value="Log In" /> 
                                     </div>
 
                                 </form>
-
-                                <div class="text-center">
-                                    <h5 class="mt-3 text-muted">Sign in with</h5>
-                                    <ul class="social-list list-inline mt-3 mb-0">
-                                        <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
 
                             </div> <!-- end card-body -->
                         </div>
