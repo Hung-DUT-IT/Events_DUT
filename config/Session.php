@@ -2,18 +2,25 @@
 class Session{
     public static function init()
     {
-        //session_start();
-        // if ( php_sapi_name() !== 'cli' ) {
-        //     if ( version_compare(phpversion(), '5.4.0', '>=') ) {
-        //         return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
-        //     } else {
-        //         return session_id() === '' ? FALSE : TRUE;
-        //     }
-        // }
-        // return FALSE;
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
+        if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
+            if(session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
         }
+        else if (version_compare(PHP_VERSION, '5.4.0') >= 0)
+        {
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+        }
+        else
+        {
+            if(session_id() == '') {
+                
+                session_start();
+            }
+        }
+        self::set("login",false );
     }
     public static function get(string $key)
     {
@@ -32,7 +39,7 @@ class Session{
         if(self::get("login") == false )
         {
             self::Destroy();
-            header("http://localhost:3000/Events_DUT/login.php");
+            header("Location:http://localhost:3000/Events_DUT/login.php");
         }
     }
     public static function CheckLogin()
@@ -40,13 +47,15 @@ class Session{
         self::init();
         if(self::get("login") == true )
         {
-            header("http://localhost:3000/Events_DUT/index.php");
+            header("Location:http://localhost:3000/Events_DUT/index.php");
         }
     }
     public static function Destroy()
     {   
-        session_destroy();
-        header("http://localhost:3000/Events_DUT/login.php");
+        session_unset();
+        if (session_status() === PHP_SESSION_ACTIVE)
+            session_destroy();
+        header("Location:http://localhost:3000/Events_DUT/login.php");
     }
 }
 ?>

@@ -20,15 +20,13 @@ class Database{
             self::$error = "Connection Fail ".self::$conn->connect_error ;
             return false; 
         }
-        echo "Connected successfully";
     }
     function DB_close(){
         mysqli_close(self::$conn);
     }
     public function Select($query)
     {
-        //self::$conn->query($query)
-        $result  = mysqli_query(self::$conn, $query )  or die (self::$conn->error.__Line__);
+        $result  = self::$conn->query($query)  or die (self::$conn->error.__Line__);
         if ($result->num_rows > 0)
         {
             return $result;

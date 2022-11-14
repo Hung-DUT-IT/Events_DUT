@@ -1,26 +1,4 @@
-<div class="content">
-
-    <!-- Start Content-->
-    <div class="container-fluid">
-        
-        <!-- start page title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title-box">
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
-                        </ol>
-                    </div>
-                    <h4 class="page-title">Dashboard 2</h4>
-                </div>
-            </div>
-        </div>     
-        <!-- end page title --> 
-
-        <div class="row">
+<div class="row">
             <div class="col-md-6 col-xl-3">
                 <div class="card-box">
                     <i class="fa fa-info-circle text-muted float-right" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="More Info"></i>
@@ -297,7 +275,3 @@
             </div> <!-- end col -->
         </div>
         <!-- end row -->
-        
-    </div> <!-- container -->
-
-</div>

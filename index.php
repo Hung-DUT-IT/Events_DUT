@@ -1,3 +1,7 @@
+<?php
+    include "config/Session.php";
+    Session::CheckLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,20 +29,34 @@
         <!-- Begin page -->
         <div id="wrapper">
             <?php
+                include "Controller/C_Account.php";
                 include "View/header.php" ;            // <!-- Topbar Start -->
                 include "View/leftsidebar.php"         // <!-- ========== Left Sidebar Start ========== -->
             ?>
             <div class="content-page">
+            <div class="content">
+
+<!-- Start Content-->
+            <div class="container-fluid">
+                
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Welcom to Events_DUT</h4>
+                        </div>
+                    </div>
+                </div>     
                 <?php
                     include "View/main.php" ;          // <!-- content -->
-                    include "View/footer.php"          // <!-- Footer Start -->
                 ?>
-            </div>
-
+            </div> <!-- container -->
+            <?php
+                    include "View/footer.php";          // <!-- Footer Start -->
+                ?>
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
-
 
         </div>
         <!-- END wrapper -->

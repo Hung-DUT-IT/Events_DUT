@@ -1,3 +1,7 @@
+<?php 
+    //include "Controller/C_Account.php"
+?>
+
 <div class="navbar-custom">
     <ul class="list-unstyled topnav-menu float-right mb-0">
 
@@ -61,7 +65,10 @@
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <img src="assets\images\users\avatar-1.jpg" alt="user-image" class="rounded-circle">
                 <span class="pro-user-name ml-1">
-                    Nik Patel <i class="mdi mdi-chevron-down"></i> 
+                    <?php 
+                        echo Session::get("username");
+                    
+                    ?> <i class="mdi mdi-chevron-down"></i> 
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -71,7 +78,7 @@
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="index?action=profile" class="dropdown-item notify-item">
                     <i class="remixicon-account-circle-line"></i>
                     <span>My Account</span>
                 </a>
@@ -85,7 +92,7 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="index?action=logout" class="dropdown-item notify-item">
                     <i class="remixicon-logout-box-line"></i>
                     <span>Logout</span>
                 </a>

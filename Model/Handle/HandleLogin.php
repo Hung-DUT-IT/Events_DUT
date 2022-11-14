@@ -41,9 +41,10 @@ class Handle_Login {
                 header('Location:http://localhost:3000/Events_DUT/index.php');
             }
             else{
+                $alert = "Username or Password not match ";
+                return $alert;
             }
         }
-        return $value['id_acc'];
     }
     public function Check_login()
     {

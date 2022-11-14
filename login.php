@@ -11,7 +11,7 @@
         $login_check = $login->login($username, $password);
 
     }
-
+    
 ?>
 
 
@@ -54,7 +54,7 @@
                                 <form action="login.php" method="POST">
 
                                     <div class="form-group mb-3">
-                                        <label >Email address</label>
+                                        <label >Username</label>
                                         <input class="form-control" type="text" name="Username"  placeholder="Enter your email" />
                                     </div>
 

@@ -12,15 +12,18 @@
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="remixicon-dashboard-line"></i>
-                        <span class="badge badge-pink badge-pill float-right">2</span>
-                        <span> Dashboards </span>
+                        <span> Manager Event </span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="index.html">Dashboard 1</a>
+                            <span class="badge badge-primary float-right">New</span>
+                            <a href="index.html">Event list</a>
                         </li>
                         <li>
-                            <a href="dashboard-2.html">Dashboard 2</a>
+                            <a href="dashboard-2.html">Register for the event</a>
+                        </li>
+                        <li>
+                            <a href="dashboard-2.html" >Registered events</a>
                         </li>
                     </ul>
                 </li>
@@ -56,7 +59,7 @@
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="remixicon-layout-line"></i>
-                        <span class="badge badge-primary float-right">New</span>
+                        
                         <span> Layouts </span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
